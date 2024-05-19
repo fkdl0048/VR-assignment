@@ -7715,7 +7715,7 @@ GameObject:
   - component: {fileID: 734000770}
   - component: {fileID: 734000769}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Volume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18129,7 +18129,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 7.31e-43, y: 1.61e-43, z: 0, w: 3.938481e+31}
+  m_BoundingSphereOverride: {x: 1.02e-43, y: 3e-45, z: 4.45e-42, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
