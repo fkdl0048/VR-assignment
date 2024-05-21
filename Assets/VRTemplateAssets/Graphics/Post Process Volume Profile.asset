@@ -21,7 +21,7 @@ MonoBehaviour:
     m_Value: 4.94
   intensity:
     m_OverrideState: 1
-    m_Value: 19.66
+    m_Value: 254.05
   scatter:
     m_OverrideState: 1
     m_Value: 0.029
@@ -47,6 +47,34 @@ MonoBehaviour:
   dirtIntensity:
     m_OverrideState: 1
     m_Value: 0
+--- !u!114 &-7962341620307382832
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5e1dc532bcb41949b58bc4f2abfbb7e, type: 3}
+  m_Name: LensDistortion
+  m_EditorClassIdentifier: 
+  active: 1
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.16
+  xMultiplier:
+    m_OverrideState: 0
+    m_Value: 1
+  yMultiplier:
+    m_OverrideState: 0
+    m_Value: 1
+  center:
+    m_OverrideState: 0
+    m_Value: {x: 0.5, y: 0.5}
+  scale:
+    m_OverrideState: 0
+    m_Value: 1
 --- !u!114 &-4267865937683315827
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -75,7 +103,7 @@ MonoBehaviour:
   rounded:
     m_OverrideState: 1
     m_Value: 0
---- !u!114 &-1360232469857127578
+--- !u!114 &-349589484308953092
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -84,37 +112,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97c23e3b12dc18c42a140437e53d3951, type: 3}
-  m_Name: Tonemapping
+  m_Script: {fileID: 11500000, guid: 040faad06a58d4b328ec6a3eb404fee1, type: 3}
+  m_Name: LimitlessGlitch2
   m_EditorClassIdentifier: 
-  active: 1
-  mode:
+  active: 0
+  enable:
     m_OverrideState: 1
-    m_Value: 2
-  neutralHDRRangeReductionMode:
-    m_OverrideState: 0
-    m_Value: 2
-  acesPreset:
-    m_OverrideState: 0
-    m_Value: 3
-  hueShiftAmount:
-    m_OverrideState: 0
-    m_Value: 0
-  detectPaperWhite:
-    m_OverrideState: 0
-    m_Value: 0
-  paperWhite:
-    m_OverrideState: 0
-    m_Value: 300
-  detectBrightnessLimits:
-    m_OverrideState: 0
     m_Value: 1
-  minNits:
-    m_OverrideState: 0
-    m_Value: 0.005
-  maxNits:
-    m_OverrideState: 0
-    m_Value: 1000
+  speed:
+    m_OverrideState: 1
+    m_Value: 0.817
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.24
+  resolutionMultiplier:
+    m_OverrideState: 1
+    m_Value: 1.356
+  stretchMultiplier:
+    m_OverrideState: 1
+    m_Value: 0.398
+  mask:
+    m_OverrideState: 1
+    m_Value: {fileID: 0}
+    dimension: 1
+  maskChannel:
+    m_OverrideState: 1
+    m_Value: 0
+  GlobalPostProcessingSettings:
+    m_OverrideState: 1
+    m_Value: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,9 +156,159 @@ MonoBehaviour:
   components:
   - {fileID: -8175944365485479075}
   - {fileID: 8339455231178082067}
-  - {fileID: -1360232469857127578}
   - {fileID: -4267865937683315827}
   - {fileID: 8377794474472642802}
+  - {fileID: 5431819809886414650}
+  - {fileID: 4416981283653710516}
+  - {fileID: -349589484308953092}
+  - {fileID: 610043966195237972}
+  - {fileID: 7862420079578832111}
+  - {fileID: -7962341620307382832}
+--- !u!114 &610043966195237972
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be08dc541b09a4e5b9f25c9c59460eb6, type: 3}
+  m_Name: LimitlessGlitch3
+  m_EditorClassIdentifier: 
+  active: 0
+  enable:
+    m_OverrideState: 1
+    m_Value: 1
+  speed:
+    m_OverrideState: 1
+    m_Value: 1
+  blockSize:
+    m_OverrideState: 1
+    m_Value: 1
+  maxOffsetX:
+    m_OverrideState: 1
+    m_Value: 1
+  maxOffsetY:
+    m_OverrideState: 1
+    m_Value: 1
+  mask:
+    m_OverrideState: 1
+    m_Value: {fileID: 0}
+    dimension: 1
+  maskChannel:
+    m_OverrideState: 1
+    m_Value: 0
+  GlobalPostProcessingSettings:
+    m_OverrideState: 1
+    m_Value: 0
+--- !u!114 &4416981283653710516
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f1c62bdc7f018b43a75aef3da42496f, type: 3}
+  m_Name: TVEffect
+  m_EditorClassIdentifier: 
+  active: 0
+  enable:
+    m_OverrideState: 0
+    m_Value: 1
+  fade:
+    m_OverrideState: 0
+    m_Value: 0.475
+  maskDark:
+    m_OverrideState: 0
+    m_Value: 0.5
+  maskLight:
+    m_OverrideState: 0
+    m_Value: 1.5
+  hardScan:
+    m_OverrideState: 0
+    m_Value: -8
+  resScale:
+    m_OverrideState: 0
+    m_Value: 4
+  ScaleWithActualScreenSize:
+    m_OverrideState: 0
+    m_Value: 0
+  hardPix:
+    m_OverrideState: 0
+    m_Value: -3
+  warpMode:
+    m_OverrideState: 0
+    m_Value: 0
+  warp:
+    m_OverrideState: 0
+    m_Value: {x: 0, y: 0}
+  scale:
+    m_OverrideState: 0
+    m_Value: 0.5
+  mask:
+    m_OverrideState: 0
+    m_Value: {fileID: 0}
+    dimension: 1
+  maskChannel:
+    m_OverrideState: 0
+    m_Value: 0
+  GlobalPostProcessingSettings:
+    m_OverrideState: 0
+    m_Value: 0
+--- !u!114 &5431819809886414650
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5485954d14dfb9a4c8ead8edb0ded5b1, type: 3}
+  m_Name: LiftGammaGain
+  m_EditorClassIdentifier: 
+  active: 0
+  lift:
+    m_OverrideState: 1
+    m_Value: {x: 0.7992398, y: 1, z: 0.9366783, w: -0.13365735}
+  gamma:
+    m_OverrideState: 1
+    m_Value: {x: 0.9848525, y: 1, z: 0.8576042, w: 0}
+  gain:
+    m_OverrideState: 1
+    m_Value: {x: 0.8992902, y: 1, z: 0.9922193, w: 0}
+--- !u!114 &7862420079578832111
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfffc298908164ce083c9c5e7137028d, type: 3}
+  m_Name: LowRes
+  m_EditorClassIdentifier: 
+  active: 0
+  enable:
+    m_OverrideState: 1
+    m_Value: 0
+  height:
+    m_OverrideState: 1
+    m_Value: 180
+  mask:
+    m_OverrideState: 1
+    m_Value: {fileID: 0}
+    dimension: 1
+  maskChannel:
+    m_OverrideState: 1
+    m_Value: 0
+  GlobalPostProcessingSettings:
+    m_OverrideState: 1
+    m_Value: 0
 --- !u!114 &8339455231178082067
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -148,7 +324,7 @@ MonoBehaviour:
   active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: 0.5
+    m_Value: 3.5
   contrast:
     m_OverrideState: 0
     m_Value: 0
@@ -173,7 +349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eb4b772797da9440885e8bd939e9560, type: 3}
   m_Name: ColorCurves
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   master:
     m_OverrideState: 1
     m_Value:
@@ -194,8 +370,8 @@ MonoBehaviour:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.8666667
-          value: 0.20599252
+          time: 0.56576574
+          value: 0.49438202
           inSlope: 1
           outSlope: 1
           tangentMode: 0
