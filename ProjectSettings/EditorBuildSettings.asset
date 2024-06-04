@@ -12,8 +12,14 @@ EditorBuildSettings:
     path: Assets/Scene/JA.unity
     guid: 3e2c9db6d160e8141a12a5854dfd1a53
   - enabled: 1
-    path: Assets/Scene/MS.unity
+    path: Assets/Scene/Cocain.unity
     guid: 2b65c117b4ada334caeb9fac7fcff854
+  - enabled: 1
+    path: Assets/Scene/LSD.unity
+    guid: 527b0013ae5db7c46ae4f50449ed1602
+  - enabled: 1
+    path: Assets/Scene/Heroin.unity
+    guid: 1ed775d78e30a7e43992a402fc1bf35f
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}
