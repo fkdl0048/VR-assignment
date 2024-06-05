@@ -1718,7 +1718,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1741,10 +1741,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.29734278
+  m_Radius: 0.19649135
   m_Height: 1.2946494
   m_Direction: 1
-  m_Center: {x: 0, y: 0.6384642, z: 0}
+  m_Center: {x: 0.0035526156, y: 0.6384642, z: -6.840065e-12}
 --- !u!1 &8446149322226307412
 GameObject:
   m_ObjectHideFlags: 0
