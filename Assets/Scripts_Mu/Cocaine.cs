@@ -1,3 +1,4 @@
+using FronkonGames.SpiceUp.Drunk;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,11 +12,21 @@ public class Cocaine : MonoBehaviour, IDrugEffect
     private DepthOfField depthOfField;
     private MotionBlur motionblur;
     private PaniniProjection paniniProjection;
+    public Camera mainCamera;
+    Drunk.Settings settings;
 
+    void Start()
+    {
+        mainCamera = Camera.main;
+        if (Drunk.IsInRenderFeatures() == false)
+            Drunk.AddRenderFeature();
+
+        settings = Drunk.GetSettings();
+    }
 
     public IEnumerator ApplyEffect(Volume volume)
     {
-        float duration = 30f;
+        float duration = 60f;
         float startChromaticAberration = 0;
         float targetChromaticAberration = 1f;
         float startPaniniProjection = 0;
@@ -45,7 +56,9 @@ public class Cocaine : MonoBehaviour, IDrugEffect
                 depthOfField.gaussianStart.value = Mathf.Lerp(0f, 20f, cycleTime / halfCycle);
             else
                 depthOfField.gaussianStart.value = Mathf.Lerp(20f, 0f, (cycleTime - halfCycle) / halfCycle);
-            
+
+            mainCamera.fieldOfView = Mathf.Lerp(60, 100, t*30.0f);
+            settings.hue = Mathf.Lerp(0f, 0.2f, Mathf.PingPong(time * (30f / duration), 1f));
             yield return null;
         }
         
