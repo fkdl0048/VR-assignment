@@ -1,5 +1,44 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4649470147962636339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8874067d4e2593b4ba0adaf5dc6bc15c, type: 3}
+  m_Name: Drunk
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    intensity: 1
+    drunkenness: 0
+    remapMin: 0
+    remapMax: 1
+    drunkSpeed: 1
+    drunkAmplitude: 0.75
+    swinging: 0.25
+    swingingSpeed: 2
+    distortion: 0.4
+    distortionSpeed: 4
+    distortionFrequency: 1
+    aberration: 8
+    aberrationSpeed: 4
+    blink: 1
+    blinkSpeed: 1.5
+    eye: {x: 0.5, y: 0.5}
+    brightness: 0
+    contrast: 1
+    gamma: 1
+    hue: 0
+    saturation: 1
+    affectSceneView: 0
+    filterMode: 1
+    whenToInsert: 550
+    enableProfiling: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,8 +54,10 @@ MonoBehaviour:
   debugShaders:
     debugReplacementPS: {fileID: 4800000, guid: cf852408f2e174538bcd9b7fda1c5ae7, type: 3}
     hdrDebugViewPS: {fileID: 4800000, guid: 573620ae32aec764abd4d728906d2587, type: 3}
-  m_RendererFeatures: []
-  m_RendererFeatureMap: 
+  m_RendererFeatures:
+  - {fileID: -4649470147962636339}
+  - {fileID: 3254805534178412987}
+  m_RendererFeatureMap: bb09ae7d63642b2d
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -55,3 +96,52 @@ MonoBehaviour:
   m_CopyDepthMode: 1
   m_AccurateGbufferNormals: 0
   m_IntermediateTextureMode: 1
+--- !u!114 &3254805534178412987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20809b918e7c6244184ec1c455a2b976, type: 3}
+  m_Name: Scanner
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    intensity: 1
+    strength: 0
+    linesCount: 500
+    linesTint: {r: 0, g: 1, b: 0, a: 1}
+    linesBlend: 13
+    backgroundTint: {r: 0, g: 0, b: 0, a: 1}
+    backgroundBlend: 17
+    scanlineStrength: 0.5
+    scanlineTint: {r: 0, g: 1, b: 0, a: 1}
+    scanlineBlend: 14
+    scanlineWidth: 1
+    scanlineSpeed: 0.5
+    noiseBandStrength: 0.2
+    noiseBandTint: {r: 0, g: 1, b: 0, a: 1}
+    noiseBandBlend: 0
+    noiseBandWidth: 0.2
+    noiseBandSpeed: 0.2
+    barrelStrength: 0.5
+    barrelZoom: 0
+    barrelTint: {r: 0.05, g: 0.05, b: 0.05, a: 1}
+    interlace: 0.1
+    frameNoise: 0.05
+    signalNoise: 0.1
+    badSignalStrength: 0
+    vignetteStrength: 0.6
+    vignetteBlink: 0.3
+    brightness: 0
+    contrast: 1
+    gamma: 1
+    hue: 0
+    saturation: 1
+    affectSceneView: 0
+    filterMode: 1
+    whenToInsert: 550
+    enableProfiling: 0

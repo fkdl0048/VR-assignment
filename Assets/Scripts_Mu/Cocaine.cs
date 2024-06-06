@@ -1,8 +1,10 @@
+using FronkonGames.SpiceUp.Drunk;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.XR.Interaction.Toolkit;
 
 
 public class Cocaine : MonoBehaviour, IDrugEffect
@@ -11,40 +13,47 @@ public class Cocaine : MonoBehaviour, IDrugEffect
     private DepthOfField depthOfField;
     private MotionBlur motionblur;
     private PaniniProjection paniniProjection;
+    public Camera mainCamera;
+    Drunk.Settings settings;
+    [SerializeField]
+    private ActionBasedContinuousMoveProvider moveProvider;
 
+    void Start()
+    {
+        mainCamera = Camera.main;
+        if (Drunk.IsInRenderFeatures() == false)
+            Drunk.AddRenderFeature();
+        if (moveProvider == null)
+            moveProvider = GameObject.Find("XR Origin (XR Rig)").GetComponent<ActionBasedContinuousMoveProvider>();
+
+        settings = Drunk.GetSettings();
+    }
 
     public IEnumerator ApplyEffect(Volume volume)
     {
-        float duration = 30f;
+        yield return new WaitForSeconds(0.5f);
+
+        float duration = 60f;
         float startChromaticAberration = 0;
         float targetChromaticAberration = 1f;
-        float startPaniniProjection = 0;
-        float targetPaniniProjection = 0.3f;
-        float startMotionBlur = 0;
-        float endMotionBlur = 0.5f;
         float time = 0f;
 
         volume.profile.TryGet(out chromaticAberration);
         volume.profile.TryGet(out depthOfField);
         volume.profile.TryGet(out motionblur);
         volume.profile.TryGet(out paniniProjection);
+        
+        mainCamera.fieldOfView = 80f;
+        motionblur.active = true;
+        motionblur.intensity.Override(0.8f);
+        settings.drunkenness = 0.1f;
+        moveProvider.moveSpeed = 2f;
 
         while (time < duration)
         {
             time += Time.deltaTime;
             float t = time / duration;
-            chromaticAberration.intensity.value = Mathf.Lerp(startChromaticAberration, targetChromaticAberration, t);
-            paniniProjection.distance.value = Mathf.Lerp(startPaniniProjection, targetPaniniProjection, t);
-            motionblur.intensity.value = Mathf.Lerp(startMotionBlur, endMotionBlur, t);
-
-
-            float cycleDuration = duration / 5;
-            float halfCycle = cycleDuration / 2;
-            float cycleTime = time % cycleDuration;
-            if (cycleTime < halfCycle)
-                depthOfField.gaussianStart.value = Mathf.Lerp(0f, 20f, cycleTime / halfCycle);
-            else
-                depthOfField.gaussianStart.value = Mathf.Lerp(20f, 0f, (cycleTime - halfCycle) / halfCycle);
+            chromaticAberration.intensity.value = Mathf.Lerp(startChromaticAberration, targetChromaticAberration, t*3);
             
             yield return null;
         }
