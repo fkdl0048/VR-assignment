@@ -45,7 +45,7 @@ public class SimulationManager : MonoBehaviour
         scannerSettings.ResetDefaultValues();
 
         /*
-        // À©µµ¿ì Å×½ºÆ® ¿ë
+        // ìœˆë„ìš° í…ŒìŠ¤íŠ¸ ìš©
         GameObject[] drugs = GameObject.FindGameObjectsWithTag("Drug");
         foreach (GameObject drug in drugs)
         {
