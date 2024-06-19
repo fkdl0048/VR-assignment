@@ -10,6 +10,8 @@ public class LSD : MonoBehaviour, IDrugEffect
     Scanner.Settings settings;
     public void Start()
     {
+        SoundManager.Instance.PlaySound("drugScene");
+
         if (Scanner.IsInRenderFeatures() == false)
             Scanner.AddRenderFeature();
 
@@ -18,6 +20,8 @@ public class LSD : MonoBehaviour, IDrugEffect
 
     public IEnumerator ApplyEffect(Volume volume)
     {
+        SoundManager.Instance.PlaySound("effectStart");
+
         yield return new WaitForSeconds(2.0f);
 
         float duration = 60f;
@@ -55,6 +59,12 @@ public class LSD : MonoBehaviour, IDrugEffect
                 hueElapsedTime = 0f;
                 settings.hue = Random.Range(0f, 1f);
             }
+
+            if (time != 0 && time % 15f < Time.deltaTime)
+            {
+                SoundManager.Instance.PlaySound("effect");
+            }
+
             yield return null;
         }
     }

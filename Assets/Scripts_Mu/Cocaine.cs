@@ -20,6 +20,8 @@ public class Cocaine : MonoBehaviour, IDrugEffect
 
     void Start()
     {
+        SoundManager.Instance.PlaySound("drugScene");
+
         mainCamera = Camera.main;
         if (Drunk.IsInRenderFeatures() == false)
             Drunk.AddRenderFeature();
@@ -31,7 +33,9 @@ public class Cocaine : MonoBehaviour, IDrugEffect
 
     public IEnumerator ApplyEffect(Volume volume)
     {
-        yield return new WaitForSeconds(0.5f);
+        SoundManager.Instance.PlaySound("effectStart");
+
+        yield return new WaitForSeconds(0.3f);
 
         float duration = 60f;
         float startChromaticAberration = 0;
@@ -54,7 +58,11 @@ public class Cocaine : MonoBehaviour, IDrugEffect
             time += Time.deltaTime;
             float t = time / duration;
             chromaticAberration.intensity.value = Mathf.Lerp(startChromaticAberration, targetChromaticAberration, t*3);
-            
+
+            if (time != 0 && time % 15f < Time.deltaTime)
+            {
+                SoundManager.Instance.PlaySound("effect");
+            }
             yield return null;
         }
         

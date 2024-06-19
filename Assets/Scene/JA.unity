@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18306622, g: 0.2287434, b: 0.30669293, a: 1}
+  m_IndirectSpecularColor: {r: 0.18306574, g: 0.22874251, b: 0.30669183, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -313,7 +313,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "LSD \uB9C8\uC57D \uCCB4\uD5D8\n(\uC124\uBA85 \uC791\uC131)"
+  m_text: "LSD \uB9C8\uC57D \uCCB4\uD5D8"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f675742eaf9c20a4f909d78ee7a14fed, type: 2}
   m_sharedMaterial: {fileID: 4687939059374929122, guid: f675742eaf9c20a4f909d78ee7a14fed, type: 2}
@@ -645,7 +645,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uCF54\uCE74\uC778 \uB9C8\uC57D \uCCB4\uD5D8\n(\uC124\uBA85 \uC791\uC131)"
+  m_text: "\uCF54\uCE74\uC778 \uB9C8\uC57D \uCCB4\uD5D8"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f675742eaf9c20a4f909d78ee7a14fed, type: 2}
   m_sharedMaterial: {fileID: 4687939059374929122, guid: f675742eaf9c20a4f909d78ee7a14fed, type: 2}
@@ -8172,6 +8172,61 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 350, y: 250}
   m_Pivot: {x: 0.5, y: 1}
+--- !u!1 &1496956448
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1496956449}
+  - component: {fileID: 1496956450}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1496956449
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496956448}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1496956450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496956448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94a4f9449b7cc96498eefdf7ef5e914e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainScene: {fileID: 8300000, guid: 39be16cfeea10f64992e749a43840e56, type: 3}
+  drugScene: {fileID: 8300000, guid: 410972d2434b26e44ab3ecc9b5c10ae3, type: 3}
+  effectStart: {fileID: 8300000, guid: ad2cec513f911f84db2106336cbbf5b0, type: 3}
+  effectSounds:
+  - {fileID: 8300000, guid: 35cc5b304b0165b42b312f8b7cec0102, type: 3}
+  - {fileID: 8300000, guid: 54fb63a882c6fd84ebd5d8c2dcbdf406, type: 3}
+  - {fileID: 8300000, guid: 82300c6796e256246855f1453265583a, type: 3}
+  - {fileID: 8300000, guid: eb7c6a6159169ea46afb662eec408c7e, type: 3}
+  - {fileID: 8300000, guid: 5b8180919e9fe234aaf39c067dc1a548, type: 3}
+  - {fileID: 8300000, guid: 7acc43f065b7d9248916ccc7100a83e9, type: 3}
+  - {fileID: 8300000, guid: 62ac03f9ac19585458f0622c24d91ef0, type: 3}
 --- !u!1 &1499996623
 GameObject:
   m_ObjectHideFlags: 0
@@ -9171,7 +9226,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uD5E4\uB85C\uC778 \uB9C8\uC57D \uCCB4\uD5D8\n(\uC124\uBA85 \uC791\uC131)"
+  m_text: "\uD5E4\uB85C\uC778 \uB9C8\uC57D \uCCB4\uD5D8"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f675742eaf9c20a4f909d78ee7a14fed, type: 2}
   m_sharedMaterial: {fileID: 4687939059374929122, guid: f675742eaf9c20a4f909d78ee7a14fed, type: 2}
@@ -11045,3 +11100,4 @@ SceneRoots:
   - {fileID: 1398380697}
   - {fileID: 1973224094}
   - {fileID: 1312705316}
+  - {fileID: 1496956449}

@@ -44,15 +44,6 @@ public class SimulationManager : MonoBehaviour
         scannerSettings = Scanner.GetSettings();
         scannerSettings.ResetDefaultValues();
 
-        /*
-        // 윈도우 테스트 용
-        GameObject[] drugs = GameObject.FindGameObjectsWithTag("Drug");
-        foreach (GameObject drug in drugs)
-        {
-            IDrugEffect drugEffect = drug.GetComponent<IDrugEffect>();
-            StartCoroutine(BrightnessEffect());
-            StartCoroutine(drugEffect.ApplyEffect(volume));
-        }*/
     }
 
 

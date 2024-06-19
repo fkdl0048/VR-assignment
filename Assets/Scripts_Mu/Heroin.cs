@@ -13,6 +13,8 @@ public class Heroin : MonoBehaviour, IDrugEffect
 
     void Start()
     {
+        SoundManager.Instance.PlaySound("drugScene");
+
         if (Drunk.IsInRenderFeatures() == false)
             Drunk.AddRenderFeature();
         if (moveProvider == null)
@@ -23,6 +25,8 @@ public class Heroin : MonoBehaviour, IDrugEffect
 
     public IEnumerator ApplyEffect(Volume volume)
     {
+        SoundManager.Instance.PlaySound("effectStart");
+
         yield return new WaitForSeconds(2.0f);
 
         float duration = 60f;
@@ -35,7 +39,12 @@ public class Heroin : MonoBehaviour, IDrugEffect
             float t = time / duration;
             
             settings.drunkenness = Mathf.Lerp(0f, 0.6f, t);
-            settings.hue = Mathf.Lerp(0.1f, 0.7f, Mathf.PingPong(time * (30f / duration), 1f));
+            settings.hue = Mathf.Lerp(0.1f, 0.2f, Mathf.PingPong(time * (30f / duration), 1f));
+
+            if (time != 0 && time % 15f < Time.deltaTime)
+            {
+                SoundManager.Instance.PlaySound("effect");
+            }
             yield return null;
         }
     }
