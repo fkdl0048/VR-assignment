@@ -58,6 +58,13 @@ public class SimulationManager : MonoBehaviour
             StartCoroutine(drugEffect.ApplyEffect(volume));
             Destroy(interactableObject.GetComponent<XRGrabInteractable>());
             Destroy(interactableObject.GetComponent<XRGeneralGrabTransformer>());
+            
+            // Text
+            TextController textController = GameObject.Find("TextController")?.GetComponent<TextController>();
+            if (textController != null)
+            {
+                textController.StartText();
+            }
         }
     }
 

@@ -14,6 +14,7 @@ public class TextController : MonoBehaviour
     
     private int i = 0;
     private TimeController timeController;
+    private bool isStart = false;
 
     private void Awake()
     {
@@ -24,6 +25,11 @@ public class TextController : MonoBehaviour
     
     void Update()
     {
+        if (!isStart)
+        {
+            return;
+        }
+
         timeController.UpdateTime();
     }
 
@@ -31,5 +37,10 @@ public class TextController : MonoBehaviour
     {
         text.text = dotTexts[i].text;
         i++;
+    }
+    
+    public void StartText()
+    {
+        isStart = true;
     }
 }
